@@ -1,0 +1,67 @@
+/* Design tokens. Every color in the site resolves through these vars, which is
+   what makes light/dark work without any component knowing a theme exists. */
+
+:root {
+  /* Light theme (default). [data-theme="dark"] overrides the same names below. */
+  --bg: #fbfbfe;
+  --bg-alt: #f3f3f9;
+  --surface: #ffffff;
+  --surface-2: #f7f7fb;
+  --border: #e3e3ee;
+  --border-strong: #cfcfe0;
+  --text: #14141f;
+  --text-muted: #5a5a70;
+
+  --accent-1: #0891b2;
+  --accent-2: #7c3aed;
+  --accent-contrast: #ffffff;
+  --grad: linear-gradient(120deg, var(--accent-1), var(--accent-2));
+
+  --shadow: 0 1px 2px rgb(20 20 31 / 0.05), 0 8px 24px -12px rgb(20 20 31 / 0.15);
+  --shadow-lift: 0 2px 4px rgb(20 20 31 / 0.06), 0 20px 40px -16px rgb(20 20 31 / 0.22);
+  --glow: none;
+
+  /* Type */
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.5rem, 1.3rem + 1vw, 2.1rem);
+  --step-3: clamp(2rem, 1.6rem + 2vw, 3.2rem);
+  --step-4: clamp(2.6rem, 1.8rem + 4vw, 5rem);
+
+  /* Space + shape */
+  --gap: 1.25rem;
+  --section-y: clamp(4rem, 8vw, 7.5rem);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+  --maxw: 1120px;
+
+  /* Motion */
+  --dur: 220ms;
+  --dur-slow: 600ms;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+[data-theme="dark"] {
+  --bg: #0b0b12;
+  --bg-alt: #0f0f18;
+  --surface: #14141f;
+  --surface-2: #1a1a28;
+  --border: #262636;
+  --border-strong: #383850;
+  --text: #e8e8f0;
+  --text-muted: #8b8ba3;
+
+  --accent-1: #22d3ee;
+  --accent-2: #a855f7;
+  --accent-contrast: #0b0b12;
+
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.5), 0 20px 40px -16px rgb(0 0 0 / 0.75);
+  --glow: 0 0 32px -8px rgb(34 211 238 / 0.35);
+}

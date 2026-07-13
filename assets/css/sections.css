@@ -1,0 +1,261 @@
+/* Team, products, values, and the card system they share.
+   Every color here resolves through a token, so both themes come for free. */
+
+/* ---------- Utilities ---------- */
+
+/* Visually hidden, still announced. Classic clip-rect pattern. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Grids ----------
+   auto-fit + minmax is the whole responsive story: no media query, the tracks
+   just wrap. The min() is load-bearing — a bare minmax(300px, 1fr) refuses to
+   shrink below 300px, so at a 320px viewport (minus the .wrap padding) the
+   track would overflow and the page would scroll sideways. min(300px, 100%)
+   lets the track collapse to the container width instead. */
+
+.team-grid,
+.product-grid,
+.values {
+  display: grid;
+  gap: var(--gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-grid { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+.product-grid { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.values { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
+
+/* ---------- Card ---------- */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+/* Gradient edge accent, painted on a ::before so the border color itself can
+   stay a plain token. Hidden until hover; the card content sits above it. */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--grad);
+  /* Mask out the middle → only the 1px ring shows. */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+}
+
+/* Lift only where there's a real pointer — no sticky hover state on touch. */
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift), var(--glow);
+  }
+  .card:hover::before { opacity: 1; }
+}
+
+/* Anything pushed into the footer row lines the cards' bottoms up with each
+   other regardless of how long the bio/tagline above it ran. */
+.card__foot { margin-top: auto; }
+
+/* ---------- Team card ---------- */
+
+.team-card__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.team-card__name {
+  font-size: var(--step-1);
+  margin-bottom: 0.3rem;
+}
+
+.team-card__role {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.04em;
+  color: var(--accent-2);
+  margin-bottom: 0.7rem;
+}
+
+.team-card__bio {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  margin-bottom: 1.25rem;
+}
+
+.icon-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icon-link {
+  display: inline-grid;
+  place-items: center;
+  /* 44px touch target even though the glyph is 18px. */
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+.icon-link:hover {
+  color: var(--text);
+  border-color: var(--accent-1);
+  background: var(--surface);
+}
+.icon-link svg { width: 18px; height: 18px; }
+
+/* ---------- Product card ---------- */
+
+.product-card__name {
+  font-size: var(--step-1);
+  margin-bottom: 0.4rem;
+}
+
+.product-card__tagline {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  line-height: 1.4;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.6rem;
+  white-space: nowrap;
+}
+
+/* Price row — the $67 is struck through and free wins. */
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.price__was {
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.price__free {
+  font-family: var(--font-display);
+  font-size: var(--step--1);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  /* Solid gradient pill. --accent-contrast is white in light, near-black in
+     dark, so the label stays legible on the cyan→violet fill either way. */
+  background: var(--grad);
+  color: var(--accent-contrast);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.7rem;
+  box-shadow: var(--glow);
+}
+
+.card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Card-scale button: same shape as .btn, less bulk. */
+.btn--sm {
+  min-height: 38px;
+  padding: 0.4rem 1rem;
+  font-size: var(--step--1);
+}
+
+/* ---------- Values (About) ---------- */
+
+/* Not cards — a lighter rule-and-number treatment, so the About section
+   doesn't read as a third grid of the same boxes. */
+.value {
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--border-strong);
+}
+
+.value__num {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.75rem;
+}
+
+.value h3 {
+  font-size: var(--step-1);
+  margin-bottom: 0.5rem;
+}
+
+.value p {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}

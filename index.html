@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>67 Enterprises — Independent Developer Collective</title>
+    <meta
+      name="description"
+      content="67 Enterprises is an independent developer collective building rapid prototypes and open-source tools. Everything we ship is free."
+    />
+    <meta name="theme-color" content="#0b0b12" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fbfbfe" media="(prefers-color-scheme: light)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="67 Enterprises" />
+    <meta
+      property="og:description"
+      content="An independent developer collective building rapid prototypes and open-source tools."
+    />
+    <meta property="og:url" content="https://67-enterprises.github.io" />
+    <link rel="canonical" href="https://67-enterprises.github.io" />
+
+    <link
+      rel="preload"
+      href="assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/space-grotesk-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/intro.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+
+    <!-- Resolve the theme before first paint. Inline and render-blocking on
+         purpose: a deferred script here would show a flash of the wrong theme. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.dataset.theme =
+            saved === "light" || saved === "dark" ? saved : prefersDark ? "dark" : "light";
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ================= Intro overlay =================
+         The hero below is in the DOM the whole time; this only sits on top of
+         it. intro.js removes it on timeout, click, key, or reduced-motion. -->
+    <div class="intro" id="intro" role="presentation" aria-hidden="true">
+      <div class="intro__stage">
+        <div class="intro__hands">
+          <!-- Left hand -->
+          <svg class="hand hand--left" viewBox="0 0 100 120" fill="none" aria-hidden="true">
+            <g
+              stroke="currentColor"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M30 66V30a8 8 0 0 1 16 0v30" />
+              <path d="M46 58V24a8 8 0 0 1 16 0v36" />
+              <path d="M62 60V32a8 8 0 0 1 16 0v34" />
+              <path d="M78 66V44a8 8 0 0 1 15 0v30" />
+              <path d="M30 66V50a8 8 0 0 0-15 4l6 26a26 26 0 0 0 25 20h20a27 27 0 0 0 27-26V66" />
+            </g>
+          </svg>
+          <!-- Right hand: same art, mirrored -->
+          <svg class="hand hand--right" viewBox="0 0 100 120" fill="none" aria-hidden="true">
+            <g
+              stroke="currentColor"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M30 66V30a8 8 0 0 1 16 0v30" />
+              <path d="M46 58V24a8 8 0 0 1 16 0v36" />
+              <path d="M62 60V32a8 8 0 0 1 16 0v34" />
+              <path d="M78 66V44a8 8 0 0 1 15 0v30" />
+              <path d="M30 66V50a8 8 0 0 0-15 4l6 26a26 26 0 0 0 25 20h20a27 27 0 0 0 27-26V66" />
+            </g>
+          </svg>
+        </div>
+        <p class="intro__word">6<span>7</span></p>
+      </div>
+      <button class="intro__skip" id="intro-skip" type="button">Skip</button>
+    </div>
+
+    <!-- ================= Header ================= -->
+    <header class="header">
+      <div class="wrap header__inner">
+        <a class="brand" href="#top">
+          <span class="brand__mark">67</span>
+          <span>Enterprises</span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a class="nav__link" href="#top">Home</a>
+          <a class="nav__link" href="#team">Team</a>
+          <a class="nav__link" href="#products">Products</a>
+        </nav>
+
+        <div class="header__actions">
+          <button
+            class="icon-btn theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-pressed="false"
+            aria-label="Switch to dark theme"
+          >
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" />
+              <path d="M12 2.6v2.2M12 19.2v2.2M4.2 12H2M22 12h-2.2M5.6 5.6 7.2 7.2M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2Z" />
+            </svg>
+          </button>
+
+          <button
+            class="icon-btn nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav"
+            aria-label="Open menu"
+          >
+            <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ================= Hero ================= -->
+      <section class="hero" id="top">
+        <div class="wrap hero__inner">
+          <p class="hero__eyebrow">
+            <span class="hero__dot" aria-hidden="true"></span>
+            Independent developer collective
+          </p>
+          <h1 class="hero__title">
+            We build <span class="grad-text">rapid prototypes</span><br />
+            and open-source tools.
+          </h1>
+          <p class="hero__lede">
+            67 Enterprises is a small, independent collective of builders. We ship fast, work in
+            the open, and give everything away.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#products">See what we've built</a>
+            <a
+              class="btn btn--ghost"
+              href="https://github.com/67-enterprises"
+              target="_blank"
+              rel="noopener"
+              >GitHub org</a
+            >
+          </div>
+          <dl class="hero__stats">
+            <div><dt>Shipped</dt><dd data-count>6</dd></div>
+            <div><dt>Founders</dt><dd data-count>2</dd></div>
+            <div><dt>Price</dt><dd class="grad-text">$0</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ================= About / Vision ================= -->
+      <section class="section section--alt" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <p class="section__label">// vision</p>
+          <h2 class="section__title" id="about-title">Builders, not a business.</h2>
+          <p class="section__intro">
+            No roadmap committee, no growth team, no pricing page that means anything. We are
+            engineers who like making things and would rather ship a rough prototype this week
+            than a perfect one next quarter.
+          </p>
+          <ul class="values">
+            <li class="value">
+              <span class="value__num">01</span>
+              <h3>Ship fast</h3>
+              <p>
+                Weekend-scale projects, released the moment they're useful. Iteration in public
+                beats polish in private.
+              </p>
+            </li>
+            <li class="value">
+              <span class="value__num">02</span>
+              <h3>Build in the open</h3>
+              <p>
+                Every repo is public and MIT licensed. Read it, fork it, tear it apart, ship your
+                own version.
+              </p>
+            </li>
+            <li class="value">
+              <span class="value__num">03</span>
+              <h3>Free forever</h3>
+              <p>
+                Everything we make is worth exactly $67 — and costs exactly nothing. That's not a
+                launch discount, it's the whole model.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= Team ================= -->
+      <section class="section" id="team" aria-labelledby="team-title">
+        <div class="wrap">
+          <p class="section__label">// team</p>
+          <h2 class="section__title" id="team-title">The co-founders</h2>
+          <p class="section__intro">Two people who kept saying "we should just build that."</p>
+          <!-- Rendered by render.js from assets/js/data.js -->
+          <ul class="team-grid" id="team-grid"></ul>
+        </div>
+      </section>
+
+      <!-- ================= Products ================= -->
+      <section class="section section--alt" id="products" aria-labelledby="products-title">
+        <div class="wrap">
+          <p class="section__label">// products</p>
+          <h2 class="section__title" id="products-title">Everything we've shipped</h2>
+          <p class="section__intro">
+            Prototypes, tools, and games. Normally $67 each. Yours for nothing.
+          </p>
+          <!-- Rendered by render.js from assets/js/data.js -->
+          <ul class="product-grid" id="product-grid"></ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="footer__meta">
+          <p>&copy; <span id="year">2026</span> 67 Enterprises.</p>
+          <p class="footer__license">
+            Released under the
+            <a href="LICENSE" target="_blank" rel="noopener">MIT License</a>.
+          </p>
+        </div>
+        <div class="footer__links">
+          <a
+            class="btn btn--ghost"
+            href="https://github.com/67-enterprises"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+            </svg>
+            67-enterprises
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/intro.js" defer></script>
+    <script src="assets/js/nav.js" defer></script>
+    <script src="assets/js/render.js" type="module"></script>
+  </body>
+</html>
