@@ -38,7 +38,7 @@ export const products = [
   },
   {
     name: "Valentines website",
-    tagline: "Not enough time to write a valentines envelope? Send this website to her",
+    tagline: "Not enough time to write a valentines envelope? Send this website to her!",
     tags: ["JS", "HTML"],
     repo: "https://github.com/bryanjhc/valentines2026",
     demo: "https://bryanjhc.github.io/valentines2026/"
