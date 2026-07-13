@@ -18,7 +18,11 @@
       content="An independent developer collective building rapid prototypes and open-source tools."
     />
     <meta property="og:url" content="https://67-enterprises.github.io" />
+    <meta property="og:image" content="https://67-enterprises.github.io/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://67-enterprises.github.io" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
     <link
       rel="preload"
@@ -54,6 +58,15 @@
         }
       })();
     </script>
+
+    <!-- Without JS the intro would never be dismissed (only intro.js removes it),
+         leaving a full-screen overlay permanently covering the page. -->
+    <noscript>
+      <style>
+        .intro { display: none !important; }
+        .noscript-note { display: block !important; }
+      </style>
+    </noscript>
   </head>
 
   <body>
@@ -62,8 +75,8 @@
     <!-- ================= Intro overlay =================
          The hero below is in the DOM the whole time; this only sits on top of
          it. intro.js removes it on timeout, click, key, or reduced-motion. -->
-    <div class="intro" id="intro" role="presentation" aria-hidden="true">
-      <div class="intro__stage">
+    <div class="intro" id="intro">
+      <div class="intro__stage" aria-hidden="true">
         <div class="intro__hands">
           <!-- Left hand -->
           <svg class="hand hand--left" viewBox="0 0 100 120" fill="none" aria-hidden="true">
@@ -98,7 +111,9 @@
         </div>
         <p class="intro__word">6<span>7</span></p>
       </div>
-      <button class="intro__skip" id="intro-skip" type="button">Skip</button>
+      <button class="intro__skip" id="intro-skip" type="button" aria-label="Skip intro animation">
+        Skip
+      </button>
     </div>
 
     <!-- ================= Header ================= -->
@@ -178,8 +193,8 @@
             >
           </div>
           <dl class="hero__stats">
-            <div><dt>Shipped</dt><dd data-count>6</dd></div>
-            <div><dt>Founders</dt><dd data-count>2</dd></div>
+            <div><dt>Shipped</dt><dd>6</dd></div>
+            <div><dt>Founders</dt><dd>2</dd></div>
             <div><dt>Price</dt><dd class="grad-text">$0</dd></div>
           </dl>
         </div>
@@ -232,6 +247,14 @@
           <p class="section__intro">Two people who kept saying "we should just build that."</p>
           <!-- Rendered by render.js from assets/js/data.js -->
           <ul class="team-grid" id="team-grid"></ul>
+          <noscript>
+            <p class="noscript-note">
+              The team cards need JavaScript. You can find us all on our
+              <a href="https://github.com/67-enterprises" target="_blank" rel="noopener"
+                >GitHub organization</a
+              >.
+            </p>
+          </noscript>
         </div>
       </section>
 
@@ -245,6 +268,15 @@
           </p>
           <!-- Rendered by render.js from assets/js/data.js -->
           <ul class="product-grid" id="product-grid"></ul>
+          <noscript>
+            <p class="noscript-note">
+              The product grid needs JavaScript. Every repo is listed on our
+              <a href="https://github.com/67-enterprises" target="_blank" rel="noopener"
+                >GitHub organization</a
+              >
+              — and they're all free.
+            </p>
+          </noscript>
         </div>
       </section>
     </main>
@@ -256,7 +288,15 @@
           <p>&copy; <span id="year">2026</span> 67 Enterprises.</p>
           <p class="footer__license">
             Released under the
-            <a href="LICENSE" target="_blank" rel="noopener">MIT License</a>.
+            <!-- Points at the GitHub blob view, not the raw /LICENSE file: Pages serves
+                 extensionless files as application/octet-stream, which downloads instead
+                 of displaying. -->
+            <a
+              href="https://github.com/67-enterprises/67-enterprises.github.io/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener"
+              >MIT License</a
+            >.
           </p>
         </div>
         <div class="footer__links">

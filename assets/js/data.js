@@ -13,38 +13,38 @@ export const org = {
 
 export const founders = [
   {
-    name: "TODO: Co-founder One",
-    role: "TODO: e.g. Systems & Infra",
-    bio: "TODO: One line on what they build and what they're into.",
-    github: "octocat", // TODO: real GitHub handle — drives the avatar
-    linkedin: "https://www.linkedin.com/in/TODO",
+    name: "Bryan",
+    role: "CEO of LARPing",
+    bio: "My end goal in life is to be a bubble tea connoisseur. I'm tryna hit the world record for most bubble tea consumed in a lifetime!",
+    github: "bryanjhc", // TODO: real GitHub handle — drives the avatar
+    linkedin: "https://www.linkedin.com/in/bryanchewjh/",
   },
   {
-    name: "TODO: Co-founder Two",
-    role: "TODO: e.g. Interfaces & Design",
-    bio: "TODO: One line on what they build and what they're into.",
-    github: "torvalds", // TODO: real GitHub handle — drives the avatar
-    linkedin: "https://www.linkedin.com/in/TODO",
+    name: "Leo",
+    role: "CEO of Vibecoding",
+    bio: "Together with my interests for software and fitness, I'm on a mission to travel the world, help lots of people improve their lives, and most importantly, learn how to say 6-7 in as many languages as possible.",
+    github: "leowolf275", // TODO: real GitHub handle — drives the avatar
+    linkedin: "https://www.linkedin.com/in/leonardo-wolf-cs/",
   },
 ];
 
 export const products = [
   {
+    name: "67game",
+    tagline: "Put your 67 skills to the test and get exactly 67 points. Works best on PC with a mouse.",
+    tags: ["Game Dev", "HTML"],
+    repo: "https://github.com/bryanjhc/67game",
+    demo: "https://bryanjhc.github.io/67game/",
+  },
+  {
+    name: "Valentines website",
+    tagline: "Not enough time to write a valentines envelope? Send this website to her",
+    tags: ["JS", "HTML"],
+    repo: "https://github.com/bryanjhc/valentines2026",
+    demo: "https://bryanjhc.github.io/valentines2026/"
+  },
+  {
     name: "TODO: Project One",
-    tagline: "TODO: What it does, in one punchy sentence.",
-    tags: ["TypeScript", "CLI"],
-    repo: "https://github.com/67-enterprises",
-    demo: "https://example.com",
-  },
-  {
-    name: "TODO: Project Two",
-    tagline: "TODO: What it does, in one punchy sentence.",
-    tags: ["Python", "ML"],
-    repo: "https://github.com/67-enterprises",
-    demo: null, // no live demo → card shows only the GitHub link
-  },
-  {
-    name: "TODO: Project Three",
     tagline: "TODO: What it does, in one punchy sentence.",
     tags: ["Rust", "Tooling"],
     repo: "https://github.com/67-enterprises",
@@ -58,14 +58,14 @@ export const products = [
     demo: "https://example.com",
   },
   {
-    name: "TODO: Project Five",
+    name: "TODO: Project Two",
     tagline: "TODO: What it does, in one punchy sentence.",
     tags: ["React", "Open Source"],
     repo: "https://github.com/67-enterprises",
     demo: null,
   },
   {
-    name: "TODO: Project Six",
+    name: "TODO: Project Three",
     tagline: "TODO: What it does, in one punchy sentence.",
     tags: ["Go", "API"],
     repo: "https://github.com/67-enterprises",

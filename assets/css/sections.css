@@ -221,12 +221,24 @@
   gap: 0.5rem;
 }
 
-/* Card-scale button: same shape as .btn, less bulk. */
+/* Card-scale button: same shape as .btn, less bulk — but never below the 44px
+   minimum touch target, so it stays comfortably tappable on a phone. */
 .btn--sm {
-  min-height: 38px;
-  padding: 0.4rem 1rem;
+  min-height: 44px;
+  padding: 0.4rem 1.1rem;
   font-size: var(--step--1);
 }
+
+/* Only ever shown inside <noscript> (the inline style in <head> flips it on). */
+.noscript-note {
+  display: none;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+}
+.noscript-note a { color: var(--accent-2); }
 
 /* ---------- Values (About) ---------- */
 

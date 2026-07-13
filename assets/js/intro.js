@@ -19,6 +19,15 @@
     return;
   }
 
+  /* Deep link (someone shared /#products): they asked for a section, not the show.
+     Skipping the intro is also the only way to land on it accurately — the overlay's
+     scroll lock races the browser's fragment jump and leaves the section ~100px off. */
+  var hash = window.location.hash;
+  if (hash && hash.length > 1 && document.getElementById(hash.slice(1))) {
+    remove();
+    return;
+  }
+
   var dismissed = false;
   var removed = false;
 
