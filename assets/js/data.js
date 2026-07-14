@@ -26,6 +26,34 @@ export const founders = [
     github: "leowolf275", // TODO: real GitHub handle — drives the avatar
     linkedin: "https://www.linkedin.com/in/leonardo-wolf-cs/",
   },
+  {
+    name: "Qi Jun",
+    role: "CEO of AQJ Pte. Ltd.",
+    bio: "I am a malaysian baddie. I like to ride in my myvi.",
+    github: "realqijun",
+    linkedin: "https://www.linkedin.com/in/realqijun/",
+  },
+  {
+    name: "Nic Tok",
+    role: "CEO of Diving",
+    bio: "I have a PHD and masters in diving. I can dive into the ocean and find a pearl, and I can dive into code and find a bug. I am a master of both.",
+    github: "nictjh",
+    linkedin: "https://www.linkedin.com/in/nictjh/",
+  },
+  {
+    name: "Samuel",
+    role: "CEO of Education",
+    bio: "I love teaching and learning. I believe in the power of education to change the world.",
+    github: "Monochromas",
+    linkedin: "https://www.linkedin.com/in/samuel/"
+  },
+  {
+    name: "Yashvan",
+    role: "CEO of Unbiased Auditing",
+    bio: "I audit, unbiased.",
+    github: "YashvanGH",
+    linkedin: "https://www.linkedin.com/in/yashvan-samy/",
+  },
 ];
 
 export const products = [
