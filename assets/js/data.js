@@ -49,8 +49,8 @@ export const founders = [
   },
   {
     name: "Yashvan",
-    role: "CEO of Unbiased Auditing",
-    bio: "I audit, unbiased.",
+    role: "CEO of Unpaid Overtime",
+    bio: "Paid in exposure",
     github: "YashvanGH",
     linkedin: "https://www.linkedin.com/in/yashvan-samy/",
   },
@@ -72,10 +72,10 @@ export const products = [
     demo: "https://bryanjhc.github.io/valentines2026/"
   },
   {
-    name: "TODO: Project One",
-    tagline: "TODO: What it does, in one punchy sentence.",
-    tags: ["Rust", "Tooling"],
-    repo: "https://github.com/67-enterprises",
+    name: "Subpar Antivirus Tool (SAT)",
+    tagline: "Every wanted to compromise your system? Replace your antivirus with this one!",
+    tags: ["Python", "Tooling"],
+    repo: "https://github.com/YashvanGH/subpar-antivirus-tool",
     demo: "https://example.com",
   },
   {
