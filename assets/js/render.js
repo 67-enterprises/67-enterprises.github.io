@@ -10,6 +10,8 @@
 
 import { founders, products, LIST_PRICE } from "./data.js";
 
+const PRODUCT_FALLBACK_IMAGE = "assets/images/products/67-enterprises-fallback.png";
+
 /* ---------- Inline icons (static, authored here — safe for innerHTML) ------ */
 
 const ICONS = {
@@ -89,7 +91,20 @@ function teamCard(person) {
 function productCard(product) {
   const li = el("li", "card product-card");
 
+  const media = el("div", "product-card__media");
+  const image = el("img", "product-card__image");
+  image.src = product.image || PRODUCT_FALLBACK_IMAGE;
+  image.alt = product.image ? (product.imageAlt || product.name) : "";
+  image.width = 1600;
+  image.height = 900;
+  image.loading = "lazy";
+  image.decoding = "async";
+  const mark = el("span", "product-card__mark", "67");
+  mark.setAttribute("aria-hidden", "true");
+  media.append(image, mark);
+
   li.append(
+    media,
     el("h3", "product-card__name", product.name),
     el("p", "product-card__tagline", product.tagline)
   );
@@ -126,8 +141,8 @@ function productCard(product) {
   // No demo → no button at all. A disabled/dead link would be worse than none.
   if (product.demo) {
     const demo = externalLink(product.demo, "btn btn--primary btn--sm");
-    demo.textContent = "Live demo";
-    demo.setAttribute("aria-label", `${product.name} live demo`);
+    demo.textContent = "Try it out!";
+    demo.setAttribute("aria-label", `Try ${product.name}`);
     links.append(demo);
   }
 

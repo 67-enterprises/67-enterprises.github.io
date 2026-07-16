@@ -17,6 +17,24 @@ Almost everything you'll want to change lives in one file: **`assets/js/data.js`
 
 Everything currently marked `TODO:` is placeholder copy waiting on real content.
 
+### Adding product images
+
+Each product card has a 16:9 image area. Cards with no assigned image use the 67 Enterprises
+fallback graphic automatically.
+
+1. Save a landscape product screenshot or illustration in `assets/images/products/`. PNG, JPG,
+   and WebP files work; 16:9 images need the least cropping.
+2. In the matching product entry in `assets/js/data.js`, replace `image: null` and
+   `imageAlt: null` with the image path and a useful description:
+
+   ```js
+   image: "assets/images/products/67game.png",
+   imageAlt: "The 67game play screen showing the score and game controls",
+   ```
+
+The large “67” mark is added automatically over every product image, so screenshots should not
+include a separate 67 logo.
+
 ## Deploying
 
 This is a plain static site — **no build step, no dependencies, no npm**. GitHub Pages serves
