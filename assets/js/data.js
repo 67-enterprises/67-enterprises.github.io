@@ -73,10 +73,10 @@ export const products = [
   },
   {
     name: "Subpar Antivirus Tool (SAT)",
-    tagline: "Every wanted to compromise your system? Replace your antivirus with this one!",
-    tags: ["Python", "Tooling"],
+    tagline: "Ever thought your antivirus was too strong? Replace your it with this one!",
+    tags: ["Python", "CLI", "Antivirus"],
     repo: "https://github.com/YashvanGH/subpar-antivirus-tool",
-    demo: "https://example.com",
+    demo: "https://github.com/YashvanGH/subpar-antivirus-tool/releases/tag/v0.1.0",
   },
   {
     name: "TODO: Game One",
