@@ -70,15 +70,6 @@ export const products = [
     demo: "https://bryanjhc.github.io/67game/",
   },
   {
-    name: "Valentines website",
-    tagline: "Not enough time to write a valentines envelope? Send this website to her!",
-    tags: ["JS", "HTML"],
-    image: "assets/images/products/valentines.png",
-    imageAlt: "Valentines website screenshot",
-    repo: "https://github.com/bryanjhc/valentines2026",
-    demo: "https://bryanjhc.github.io/valentines2026/"
-  },
-  {
     name: "Subpar Antivirus Tool (SAT)",
     tagline: "Ever thought your antivirus was too strong? Replace it with this one!",
     tags: ["Python", "CLI", "Antivirus"],
@@ -88,13 +79,22 @@ export const products = [
     demo: "https://github.com/YashvanGH/subpar-antivirus-tool/releases/tag/v0.1.0",
   },
   {
-    name: "TODO: Game One",
-    tagline: "TODO: What it does, in one punchy sentence.",
-    tags: ["Game", "WebGL"],
-    image: null,
-    imageAlt: null,
+    name: "Simple Expense Telegram Bot",
+    tagline: "Track your expenses with a simple Telegram bot that logs them to a Google Sheet.",
+    tags: ["Telegram Bot", "Google Apps Script", "JavaScript"],
+    image: "assets/images/products/simple expense bot.png",
+    imageAlt: "Simple Expense Telegram Bot screenshot",
     repo: "https://github.com/67-enterprises",
     demo: "https://example.com",
+  },
+  {
+    name: "Valentines website",
+    tagline: "Not enough time to write a valentines envelope? Send this website to her!",
+    tags: ["JS", "HTML"],
+    image: "assets/images/products/valentines.png",
+    imageAlt: "Valentines website screenshot",
+    repo: "https://github.com/bryanjhc/valentines2026",
+    demo: "https://bryanjhc.github.io/valentines2026/"
   },
   {
     name: "TODO: Project Two",
