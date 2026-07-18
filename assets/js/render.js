@@ -8,7 +8,7 @@
  * are authored right here in this file.
  * ==========================================================================*/
 
-import { founders, products, LIST_PRICE } from "./data.js";
+import { founders, productCategories, products, LIST_PRICE } from "./data.js";
 
 const PRODUCT_FALLBACK_IMAGE = "assets/images/products/67-enterprises-fallback.png";
 
@@ -164,8 +164,39 @@ function mount(id, items, build) {
   container.replaceChildren(frag);
 }
 
+function mountProductGroups() {
+  const container = document.getElementById("product-groups");
+  if (!container) return;
+
+  const frag = document.createDocumentFragment();
+
+  for (const category of productCategories) {
+    const categoryProducts = products.filter((product) => product.category === category.id);
+    if (!categoryProducts.length) continue;
+
+    const group = el("section", "product-group");
+    const titleId = `product-group-${category.id}`;
+    group.setAttribute("aria-labelledby", titleId);
+
+    const heading = el("h3", "product-group__title", category.name);
+    heading.id = titleId;
+    const intro = el("p", "product-group__intro", category.intro);
+    const grid = el("ul", "product-grid");
+
+    for (const product of categoryProducts) grid.append(productCard(product));
+
+    group.append(heading, intro, grid);
+    frag.append(group);
+  }
+
+  container.replaceChildren(frag);
+}
+
 mount("team-grid", founders, teamCard);
-mount("product-grid", products, productCard);
+mountProductGroups();
+
+const productCount = document.getElementById("product-count");
+if (productCount) productCount.textContent = String(products.length);
 
 const year = document.getElementById("year");
 if (year) year.textContent = String(new Date().getFullYear());

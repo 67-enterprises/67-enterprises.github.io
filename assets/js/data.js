@@ -59,9 +59,28 @@ export const founders = [
   },
 ];
 
+export const productCategories = [
+  {
+    id: "tools",
+    name: "Useful Tools",
+    intro: "Small helpers. Big 67 energy.",
+  },
+  {
+    id: "games",
+    name: "Games & Experiments",
+    intro: "Play first. Ask later.",
+  },
+  {
+    id: "heart",
+    name: "From the Heart",
+    intro: "For gifts, crushes, and good vibes.",
+  },
+];
+
 export const products = [
   {
     name: "67game",
+    category: "games",
     tagline: "Put your 67 skills to the test and get exactly 67 points. Works best on PC with a mouse.",
     tags: ["Game Dev", "HTML"],
     image: "assets/images/products/67game.png",
@@ -71,6 +90,7 @@ export const products = [
   },
   {
     name: "Subpar Antivirus Tool (SAT)",
+    category: "tools",
     tagline: "Ever thought your antivirus was too strong? Replace it with this one!",
     tags: ["Python", "CLI", "Antivirus"],
     image: null,
@@ -80,39 +100,23 @@ export const products = [
   },
   {
     name: "Simple Expense Telegram Bot",
+    category: "tools",
     tagline: "Track your expenses with a simple Telegram bot that logs them to a Google Sheet.",
     tags: ["Telegram Bot", "Google Apps Script", "JavaScript"],
     image: "assets/images/products/simple expense bot.png",
     imageAlt: "Simple Expense Telegram Bot screenshot",
-    repo: "https://github.com/67-enterprises",
-    demo: "https://example.com",
+    repo: "https://github.com/bryanjhc/simple-expense",
+    demo: null,
   },
   {
     name: "Valentines website",
+    category: "heart",
     tagline: "Not enough time to write a valentines envelope? Send this website to her!",
     tags: ["JS", "HTML"],
     image: "assets/images/products/valentines.png",
     imageAlt: "Valentines website screenshot",
     repo: "https://github.com/bryanjhc/valentines2026",
-    demo: "https://bryanjhc.github.io/valentines2026/"
-  },
-  {
-    name: "TODO: Project Two",
-    tagline: "TODO: What it does, in one punchy sentence.",
-    tags: ["React", "Open Source"],
-    image: null,
-    imageAlt: null,
-    repo: "https://github.com/67-enterprises",
-    demo: null,
-  },
-  {
-    name: "TODO: Project Three",
-    tagline: "TODO: What it does, in one punchy sentence.",
-    tags: ["Go", "API"],
-    image: null,
-    imageAlt: null,
-    repo: "https://github.com/67-enterprises",
-    demo: "https://example.com",
+    demo: "https://bryanjhc.github.io/valentines2026/",
   },
 ];
 
