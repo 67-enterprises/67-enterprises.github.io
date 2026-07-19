@@ -46,9 +46,9 @@ export const founders = [
   {
     name: "Samuel",
     role: "CEO of Education",
-    bio: "I love teaching and learning. I believe in the power of education to change the world.",
+    bio: "Re-educating the founders, actively negating their 67 brainrot.",
     github: "Monochromas",
-    linkedin: "https://www.linkedin.com/in/samuel/"
+    linkedin: null,
   },
   {
     name: "Yashvan",
