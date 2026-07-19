@@ -85,8 +85,18 @@ export const products = [
     tags: ["Game Dev", "HTML"],
     image: "assets/images/products/67game.png",
     imageAlt: "67game screenshot",
-    repo: "https://github.com/bryanjhc/67game",
+    repo: "https://github.com/67-enterprises/67game",
     demo: "https://bryanjhc.github.io/67game/",
+  },
+  {
+    name: "Brainrot Begone",
+    category: "games",
+    tagline: "Your friend is too brainrotted? Install this on their computer!",
+    tags: ["TTS", "Game Dev", "TypeScript", "Brainrot"],
+    image: "assets/images/products/brainrot begone.png",
+    imageAlt: "brainrot begone screenshot",
+    repo: "https://github.com/67-enterprises/brainrot-begone",
+    demo: null,
   },
   {
     name: "Subpar Antivirus Tool (SAT)",
@@ -105,7 +115,7 @@ export const products = [
     tags: ["Telegram Bot", "Google Apps Script", "JavaScript"],
     image: "assets/images/products/simple expense bot.png",
     imageAlt: "Simple Expense Telegram Bot screenshot",
-    repo: "https://github.com/bryanjhc/simple-expense",
+    repo: "https://github.com/67-enterprises/simple-expense",
     demo: null,
   },
   {
@@ -115,7 +125,7 @@ export const products = [
     tags: ["JS", "HTML"],
     image: "assets/images/products/valentines.png",
     imageAlt: "Valentines website screenshot",
-    repo: "https://github.com/bryanjhc/valentines2026",
+    repo: "https://github.com/67-enterprises/valentines2026",
     demo: "https://bryanjhc.github.io/valentines2026/",
   },
 ];
