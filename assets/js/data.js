@@ -45,8 +45,8 @@ export const founders = [
   },
   {
     name: "Samuel",
-    role: "CEO of Education",
-    bio: "Re-educating the founders, actively negating their 67 brainrot.",
+    role: "CEO of Crashing Out",
+    bio: "Anyone surrounded by these brainrotted founders would be crashing out too.",
     github: "Monochromas",
     linkedin: null,
   },
